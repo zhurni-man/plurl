@@ -1,0 +1,8 @@
+-if @short_url.present? && !@short_url.valid?
+  %div.alert-message.error
+    %a.close{:href => "#"}
+    %p.bold Invalid URL: #{@short_url.url}
+
+%form(action="/" method="POST")
+  %input{:type => "text", :name => "url", :id => "url", :placeholder => "Enter URL"}
+  %input(type="submit" value="Shorten" class="btn")

@@ -1,0 +1,14 @@
+!!!
+%html
+  %script{:type => "text/javascript", :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
+  %script{:type => "text/javascript", :src => "javascripts/jquery.zclip.js"}
+  %link(rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css")
+  %link(rel="stylesheet" href="stylesheets/app.css")
+  %body
+    .container
+      #header
+        %a{:href => "http://plurl.dev2.propertyline.com"}
+          %img(src="images/plurl_logo_03.png")
+        %h3 Shorten your property listing URLS
+      #content
+        =yield

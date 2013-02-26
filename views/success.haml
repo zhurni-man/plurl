@@ -1,0 +1,18 @@
+:javascript
+  $(document).ready(function() {
+    $('a#copy-description').zclip({
+      path: 'flash/ZeroClipboard.swf',
+      copy:$('a#description').text()
+    });
+    
+    $('a#copy-dynamic').zclip({
+      path: 'javascripts/ZeroClipboard.swf',
+      copy:function(){return $('input#dynamic').val();}
+    });
+  });
+%div.shorturl.alert-message.block-message.success
+  %a#description{:href => "http://plurl.dev2.propertyline.com/#{@short_url.shorten}"} http://plurl.dev2.propertyline.com/#{@short_url.shorten}
+  %a#copy-description.btn{:href => "#"} Copy URL
+%p
+  Long URL : 
+  %a{:href => "#{@short_url.url}"} #{@short_url.url}
